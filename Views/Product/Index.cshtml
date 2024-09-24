@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Create New Item</h2>
+        <form action="/product/create" method="POST">
+            <div class="form-group">
+                <label for="name">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="name" name="Name" required minlength="3" maxlength="50" pattern="[0-9A-Za-z_]+" title="Only letters, numbers, and underscores are allowed.">
+            </div>
+            <div class="form-group">
+                <label for="description">Description <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="description" name="Description" required minlength="20" maxlength="200"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="price" name="Price" required step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="stockQuantity">Stock Quantity <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="stockQuantity" name="StockQuantity" required min="1">
+            </div>
+            <div class="form-group">
+                <label for="lowStockThreshold">Low Stock Threshold <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="lowStockThreshold" name="LowStockThreshold" required min="1">
+            </div>
+            <button type="submit" class="btn btn-primary">Create Item</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
